@@ -12,34 +12,34 @@ function appContent() {
             </div>
             <div class="cards">
                 <div class="row">
-                    <img src="./static/img/moa.png" alt="Placeholder image">
+                    <img src="./static/img/for-all-mankind.png" alt="./static/video/fam.mp4">
                 </div>
                 <div class="row">
-                    <img src="./static/img/tedlasso.png" alt="Placeholder image">
+                    <img src="./static/img/tedlasso.png" alt="./static/video/fam.mp4">
                 </div>
                 <div class="row">
-                    <img src="./static/img/monarch.png" alt="Placeholder image">
+                    <img src="./static/img/monarch.png" alt="./static/video/fam.mp4">
                 </div>
                 <div class="row">
-                    <img src="./static/img/hground.png" alt="Placeholder image">
+                    <img src="./static/img/hground.png" alt="./static/video/fam.mp4">
                 </div>
                 <div class="row">
-                    <img src="./static/img/kflower.png" alt="Placeholder image" >
+                    <img src="./static/img/kflower.png" alt="./static/video/fam.mp4" >
                 </div>
                 <div class="row">
-                    <img src="./static/img/moa.png" alt="Placeholder image">
+                    <img src="./static/img/family.png" alt="./static/video/fam.mp4">
                 </div>
                 <div class="row">
-                    <img src="./static/img/tedlasso.png" alt="Placeholder image">
+                    <img src="./static/img/dynasty.png" alt="./static/video/fam.mp4">
                 </div>
                 <div class="row">
-                    <img src="./static/img/monarch.png" alt="Placeholder image">
+                    <img src="./static/img/invasion.png" alt="./static/video/fam.mp4">
                 </div>
                 <div class="row">
-                    <img src="./static/img/hground.png" alt="Placeholder image">
+                    <img src="./static/img/foundation.png" alt="./static/video/fam.mp4">
                 </div>
                 <div class="row">
-                    <img src="./static/img/kflower.png" alt="Placeholder image" >
+                    <img src="./static/img/moa.png" alt="./static/video/fam.mp4" >
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@ function appContent() {
 
 function appControls(){
     return `
-        <div class="photo-sidebar">
+        <div class="tv-sidebar">
 
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256"
             style="fill:#000000;">
