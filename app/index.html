@@ -4,12 +4,21 @@
     <title>Apple Vision Pro</title>
     <meta screen="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/css/style.css">
-    <!-- <link rel="stylesheet" href="./static/libs/bootstrap.min.css"> -->
     <script src="./static/js/mainOS.js"></script>
+    <script src="./static/libs/Threejs/three.min.js"></script>
+
+    <script type="importmap">
+			{
+				"imports": {
+					"three": "./static/libs/Threejs/three.module.js",
+					"three/addons/": "./jsm/"
+				}
+			}
+		</script>
   </head>
   <body>
     <main id="parallax" class="parallax">
-      <img src="./static/img/bg.png" />
+      <!-- <img src="./static/img/bg.png" /> -->
       <div class="agumented-ui">
         <div class="ui">
           
@@ -23,10 +32,7 @@
               <path fill="currentColor" d="M88.506 64.484h-8.558l5.782 10.002c1.624 2.832.647 6.434-2.152 8.053-2.833 1.624-6.434.647-8.053-2.152-4.276-7.396-8.077-13.984-11.408-19.757l-.007-.011a7940.194 7940.194 0 0 0-10.417-18.023c-4.928-8.558-1.416-17.111 2.096-20l2.858 4.953.004.008.024.04 1.407 2.44a26119.19 26119.19 0 0 0 13.083 22.651h15.34c3.248 0 5.901 2.657 5.901 5.9a5.896 5.896 0 0 1-5.9 5.896Z" />
             </svg>
     
-            <svg xmlns="http://www.w3.org/2000/svg" width="88" height="95" fill="none" viewBox="0 0 88 95">
-              <path fill="currentColor" d="M81.877 58.443 71.72 51.872l3.91-7.09a12.238 12.238 0 0 0 1.44-5.74V27.804a16.091 16.091 0 0 0-2.663-8.9 16.362 16.362 0 0 0-7.162-6 16.58 16.58 0 0 0-9.317-1.136 16.483 16.483 0 0 0-8.422 4.1v65.628h37.668V68.15a11.456 11.456 0 0 0-1.402-5.519 11.61 11.61 0 0 0-3.895-4.188Z" />
-              <path fill="currentColor" d="m63.737 63.294-13.555-8.87 5.219-9.568a16.668 16.668 0 0 0 1.922-7.75V21.939A21.955 21.955 0 0 0 35.402 0c-12.076 0-21.9 9.842-21.9 21.938v15.169c-.012 2.7.64 5.36 1.9 7.747l5.247 9.62-13.476 8.82A15.595 15.595 0 0 0 .105 76.376L0 94.41h70.806V76.396a15.602 15.602 0 0 0-7.069-13.102Z" />
-            </svg>
+            <svg fill="#ffffff82" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M735.385 336.094c218.24 0 395.977 177.624 395.977 395.976v113.137c0 121.96-56.568 229.78-143.57 302.526 94.13 13.916 187.354 34.959 278.315 64.6 122.414 39.825 204.664 155.676 204.664 288.159v200.364l-26.814 16.63c-148.434 92.32-392.017 202.515-708.572 202.515-174.795 0-439.76-35.186-708.685-202.514L0 1700.856v-189.39c0-140.629 89.264-263.042 221.973-304.79 85.418-26.7 172.533-46.498 260.327-59.509-86.55-72.746-142.891-180.339-142.891-301.96V732.07c0-218.352 177.623-395.976 395.976-395.976ZM1183.405 0c218.24 0 395.976 177.624 395.976 395.977v113.136c0 121.96-56.568 229.893-143.57 302.526 94.13 13.916 187.241 35.072 278.316 64.6 122.413 40.051 204.663 155.79 204.663 288.272v200.364l-26.7 16.631c-77.612 48.31-181.81 101.03-308.183 140.742v-21.723c0-181.696-113.589-340.766-282.727-395.75a1720.133 1720.133 0 0 0-111.553-32.244c35.751-69.805 54.871-147.416 54.871-227.29V732.104c0-250.483-182.036-457.975-420.414-500.175C886.762 95.487 1023.656 0 1183.404 0Z" fill-rule="evenodd"></path> </g></svg>
     
             <a href="#" >
             <svg xmlns="http://www.w3.org/2000/svg" width="95" height="91" fill="none" viewBox="0 0 95 91">
@@ -134,7 +140,8 @@
     
     <div class="logo-wrapper">
     </div>
-
-    <!-- <script src="./static/js/index.js"></script> -->
+    <script type="module" src="./static/js/panoramic.js"></script>
+    
+    <!-- <script type="module" src="./static/js/spatialEffect.js"></script> -->
   </body>
 </html>
