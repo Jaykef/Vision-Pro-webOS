@@ -3,24 +3,24 @@ function appContent() {
     <div class="mf-content">
     </div>
     `
-  }
+}
   
-  function appControls() {
+function appControls() {
     return `
     
           <div class="mf-sidebar">
 
           </div>
         `
-  }
+}
   
-  function bottomNav() {
+function bottomNav() {
     return `
     <div class="mf-controls">
     </div>
     `
-  }
+}
   
-  appContent();
-  appControls();
-  bottomNav();
+appContent();
+appControls();
+bottomNav();
