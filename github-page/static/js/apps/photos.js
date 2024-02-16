@@ -3,76 +3,76 @@ function appContent() {
     return `
         <div class="photo-content">
             <div class="row">
-                <img src="./static/img/jay.png" alt="Placeholder image">
+                <img src="./github-page/static/img/jay.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/jayshelby_2.png" alt="Placeholder image">
+                <img src="./github-page/static/img/jayshelby_2.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/lake.png" alt="Placeholder image">
+                <img src="./github-page/static/img/lake.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/jayshelby.png" alt="Placeholder image">
+                <img src="./github-page/static/img/jayshelby.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/snow.png" alt="Placeholder image" >
+                <img src="./github-page/static/img/snow.png" alt="Placeholder image" >
             </div>
             <div class="row">
-                <img src="./static/img/tea.png" alt="Placeholder image">
+                <img src="./github-page/static/img/tea.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/dog.png" alt="Placeholder image">
+                <img src="./github-page/static/img/dog.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/autumn.png" alt="Placeholder image">
+                <img src="./github-page/static/img/autumn.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/turktea.png" alt="Placeholder image">
+                <img src="./github-page/static/img/turktea.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/newyear.png" alt="Placeholder image">
+                <img src="./github-page/static/img/newyear.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/shanghai.png" alt="Placeholder image" >
+                <img src="./github-page/static/img/shanghai.png" alt="Placeholder image" >
             </div>
             <div class="row">
-                <img src="./static/img/office.png" alt="Placeholder image">
+                <img src="./github-page/static/img/office.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/skyline.png" alt="Placeholder image">
+                <img src="./github-page/static/img/skyline.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/bit.png" alt="Placeholder image">
+                <img src="./github-page/static/img/bit.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/thebund.png" alt="Placeholder image">
+                <img src="./github-page/static/img/thebund.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/house.png" alt="Placeholder image">
+                <img src="./github-page/static/img/house.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/toh.png" alt="Placeholder image">
+                <img src="./github-page/static/img/toh.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/toh.png" alt="Placeholder image">
+                <img src="./github-page/static/img/toh.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/toh.png" alt="Placeholder image">
+                <img src="./github-page/static/img/toh.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/toh.png" alt="Placeholder image">
+                <img src="./github-page/static/img/toh.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/toh.png" alt="Placeholder image">
+                <img src="./github-page/static/img/toh.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/toh.png" alt="Placeholder image">
+                <img src="./github-page/static/img/toh.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/toh.png" alt="Placeholder image">
+                <img src="./github-page/static/img/toh.png" alt="Placeholder image">
             </div>
             <div class="row">
-                <img src="./static/img/toh.png" alt="Placeholder image">
+                <img src="./github-page/static/img/toh.png" alt="Placeholder image">
             </div>
         </div>
     `;
