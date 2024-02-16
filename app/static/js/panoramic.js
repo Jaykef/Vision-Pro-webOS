@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from '../libs/Threejs/OrbitControls.js';
-const panoramasArray = ["./static/img/livingroom_3.jpg"];
+// const panoramasArray = ["./static/img/livingroom_3.jpg"]; for node server
+const panoramasArray = ["../img/livingroom_3.jpg"]; 
 let panoramaNumber = Math.floor(Math.random() * panoramasArray.length);
 
 
