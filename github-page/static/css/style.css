@@ -1,0 +1,563 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  width: 0px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ad3955;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ad3955;
+}
+canvas {
+  opacity: 0.88;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+}
+body {
+  background: #191919;
+  overflow: hidden;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.parallax {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: flex;
+
+}
+.parallax img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+.parallax > img {
+  filter: blur(2px);
+}
+.agumented-ui {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+}
+.ui {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  gap: 5rem;
+  z-index: 999;
+}
+.agumented-ui .sidebar {    
+  background: rgb(129 129 129 / 31%);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0.5rem 0.25rem;
+  border-radius: 3rem;
+  box-shadow: 2px 2px 8px rgb(226 226 226 / 69%), inset 2px 2px 8px rgb(222 222 222 / 19%);
+  width: 2.5rem;
+  height: fit-content;
+  margin: auto 0;
+}
+.agumented-ui .sidebar a {
+  display: flex;
+}
+.agumented-ui .sidebar svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #ffffff82;
+}
+.agumented-ui .sidebar svg.selected {
+  color: #fff;
+}
+.selector {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  background: rgb(252 252 252 / 29%);
+  box-shadow: 2px 2px 8px rgb(181 181 181), inset 2px 2px 8px rgb(239 239 239 / 52%);
+  border-radius: 50%;
+}
+.agumented-ui .icons {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+.agumented-ui .icons .row {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+}
+.agumented-ui .icons .row .app {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #cccccc0f;
+  /* box-shadow: 2px 2px 8px #777, inset 2px 2px 8px #eee; */
+  padding: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.agumented-ui .icons .row .app a {
+
+  text-align: center;
+  color: #ffffffa6;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 12px;
+ }
+.agumented-ui .icons .row .app img {
+  width: 5rem;
+  height: 5rem;
+  margin: 0px -8px 0px -9px !important;
+}
+
+.logo-wrapper {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  animation: fade-in 0.8s linear forwards;
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+.logo {
+  width: 3rem;
+  height: auto;
+  color: #fff;
+}
+.circle {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  stroke-dasharray: 52;
+  stroke-dashoffset: 40;
+  animation: rotate 3s linear infinite;
+  filter: drop-shadow(0px 0px 6px #fff);
+}
+.modal {
+  position: fixed;
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0); /* Transparent background initially */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Ensure the modal appears on top of other content */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.modal.show {
+  opacity: 1; /* Show modal */
+  background-color: rgb(255 255 255 / 0%); /* Semi-transparent background */
+  height: 580px;
+}
+
+.modal-content {
+  background-color: rgb(157 156 156 / 25%);
+  /* padding: 20px; */
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgb(226 226 226 / 28%), inset 2px 2px 8px rgb(222 222 222 / 4%);
+  position: relative;
+  opacity: 0;
+  width: 900px;
+  /* height: 50%; */
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  transition: opacity 0.3s ease;
+}
+
+.modal.show .modal-content {
+  opacity: 1;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #ffffff00;
+}
+
+.close:hover {
+  color: #00000000;
+}
+
+.modal .photo-sidebar,
+.modal .tv-sidebar,
+.modal .store-sidebar,
+.modal .mf-sidebar{
+  background: rgb(129 129 129 / 31%);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem 0.25rem;
+  border-radius: 3rem;
+  box-shadow: 2px 2px 8px rgb(226 226 226 / 69%), inset 2px 2px 8px rgb(222 222 222 / 19%);
+  width: 2.5rem;
+  height: fit-content;
+  margin: auto 30px;
+}
+
+.modal .photo-sidebar .selector,
+.modal .store-sidebar .selector
+ {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  background: rgb(252 252 252 / 29%);
+  box-shadow: 2px 2px 8px rgb(181 181 181), inset 2px 2px 8px rgb(239 239 239 / 52%);
+  border-radius: 50%;
+}
+
+.modal .photo-sidebar .selected,
+.modal .tv-sidebar .selected,
+.modal .store-sidebar .selected,
+.modal .mf-sidebar .selected  {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  background: rgb(252 252 252 / 29%);
+  box-shadow: 2px 2px 8px rgb(181 181 181), inset 2px 2px 8px rgb(239 239 239 / 52%);
+  border-radius: 50%;
+}
+
+.modal .photo-controls {
+  position: absolute;
+  margin-top: 30rem;
+  margin-left: 6rem;
+  background: rgb(111 111 111 / 77%);
+  padding: 20px 1px 20px 10px;
+  border-radius: 12rem;
+  box-shadow: 2px 2px 8px rgb(226 226 226 / 69%), inset 2px 2px 8px rgb(222 222 222 / 19%);
+  color: #fff;
+}
+
+.modal .photo-controls .selected {
+  background: rgb(252 252 252 / 29%);
+  padding: 12px;
+  border-radius: 15rem;
+}
+
+.modal .photo-controls span {
+  cursor: pointer;
+}
+
+.modal .photo-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  overflow-y: scroll;
+  height: 490px;
+  border-radius: 30px;
+}
+.modal .photo-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+}
+
+.modal .photo-content::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+.modal .photo-content::-webkit-scrollbar-thumb {
+  background-color: #d5d5d56a;
+  border-radius: 14px;
+}
+
+.modal .safari-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+}
+
+.modal .safari-content::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+.modal .safari-content::-webkit-scrollbar-thumb {
+  background-color: #d5d5d56a;
+  border-radius: 14px;
+}
+
+.modal .photo-content .row {
+  position: relative; 
+  width: 100%; 
+  height: 0; 
+  padding-top: 100%;
+  overflow: hidden; 
+}
+.modal .safari-topbar {
+  display: flex;
+  position: absolute;
+  padding-inline: 12px;
+  margin-bottom: 550px;
+  background: rgb(157 156 156 / 25%);
+  width: 600px;
+  height: 45px;
+  backdrop-filter: blur(12px);
+  align-items: center;
+  border-radius: 30rem;
+  box-shadow: 2px 2px 8px rgb(226 226 226 / 28%), inset 2px 2px 8px rgb(222 222 222 / 4%);
+}
+.modal .safari-topbar .brackets {
+  display: inline-flex;
+  gap: 4px;
+}
+.modal .safari-topbar .brackets .bracket,
+.modal .safari-topbar .share .icon {    
+  background: rgb(139 139 139 / 38%);
+  padding: 5px;
+  border-radius: 20rem;
+  justify-content: center;
+  display: flex;
+  box-shadow: 2px 2px 8px rgb(226 226 226 / 28%), inset 2px 2px 8px rgb(222 222 222 / 4%);
+  cursor: pointer;
+}
+
+.modal .safari-topbar .share {
+  gap: 4px
+}
+
+.modal .safari-topbar .row {
+  display: inline-flex;
+  align-content: space-evenly;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.modal .safari-topbar .brackets svg,  .modal .safari-topbar .share svg {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+.modal .safari-topbar .brackets, 
+.modal .safari-topbar .share,
+.modal .safari-topbar .search{
+  flex: 1;
+  justify-content: center;
+  display: flex;
+}
+
+.modal .safari-topbar .search {
+  padding-inline: 12px;
+}
+::placeholder{
+  padding-left: 20px !important;
+  color: #aaaaaa76;
+}
+.modal .safari-topbar .search input {    
+  width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  border: none;
+  background: #0000006b;
+  color: #fff;
+}
+.modal .safari-topbar .search {
+  flex: 6;
+}
+
+.modal .safari-topbar .search svg {
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  left: 125px;
+  margin-top: 7px;
+}
+
+.modal .safari-content {
+  overflow-y: scroll;
+  height: 490px;
+  border-radius: 30px;
+  background: #0000006b;
+}
+.modal .photo-content .row img {
+  position: absolute; 
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.modal .mf-content {
+  overflow-y: scroll;
+  height: 490px;
+  border-radius: 30px;
+  overflow-x: hidden;
+  background: rgb(157 156 156 / 25%);
+}
+.modal .tv-content,
+.modal .store-content{
+  overflow-y: scroll;
+  height: 490px;
+  border-radius: 30px;
+  overflow-x: hidden;
+  background: #000000d4;
+}
+.modal .tv-controls {
+  margin-left: 5rem;
+}
+.modal .tv-controls, 
+.modal .safari-controls,
+.modal .mf-controls {
+  position: absolute;
+  margin-top: 34rem;
+  background: rgb(111 111 111 / 77%);
+  padding: 6px;
+  width: 100px;
+  border-radius: 12rem;
+  box-shadow: 2px 2px 8px rgb(226 226 226 / 69%), inset 2px 2px 8px rgb(222 222 222 / 19%);
+  color: #fff;
+  cursor: grab;
+}
+.modal .tv-content .cards,
+.modal .store-content .cards{    
+  display: grid;
+  gap: 10px;
+  margin: 10px;
+  margin-top: -120px;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+}
+.modal .tv-content::-webkit-scrollbar-track,
+.modal .store-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+}
+.modal .tv-content::-webkit-scrollbar,
+.modal .store-content::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+.modal .tv-content::-webkit-scrollbar-thumb,
+.modal .store-content::-webkit-scrollbar-thumb {
+  background-color: #d5d5d56a;
+  border-radius: 14px;
+}
+.modal .tv-content .hero,
+.modal .store-content .hero  {
+  height: 500px;
+  width: 100%;
+}
+.modal .tv-content .hero .logo {    
+  position: absolute;
+  justify-content: center;
+  width: 100px;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+.modal .tv-content .hero .logo svg{
+  height: 40px;
+  width: 40px;
+}
+.modal .tv-content .hero img,
+.modal .store-content .hero img  {
+  height: 100%;
+  width: 100%;
+}
+.modal .tv-content .cards .row,
+.modal .store-content .cards .row {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.modal .tv-content video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.modal .tv-content .cards .row img,
+.modal .store-content .cards .row img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.modal .photo-controls span  {
+  margin-inline: 10px;
+}
+
+.modal .photo-sidebar svg,
+.modal .tv-sidebar svg,
+.modal .store-sidebar svg,
+.modal .mf-sidebar svg{
+  width: 1.3rem;
+  height: 1.3rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #ffffff82;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
