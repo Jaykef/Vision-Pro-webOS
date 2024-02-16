@@ -59,23 +59,23 @@ function createSphere() {
 function animate() {
     requestAnimationFrame(animate);
   
-    if (controls.enabled)
+    // if (controls.enabled)
 
-    if ( isUserInteracting === false ) {
+    // if ( isUserInteracting === false ) {
 
-        controls.update();
-        lon += 0.01;
-    }
+    //     controls.update();
+    //     lon += 0.01;
+    // }
 
-    lat = Math.max(200, Math.min(230, lat ) );
-    phi = THREE.MathUtils.degToRad( 110 - lat );
-    theta = THREE.MathUtils.degToRad( lon );
+    // lat = Math.max(200, Math.min(230, lat ) );
+    // phi = THREE.MathUtils.degToRad( 110 - lat );
+    // theta = THREE.MathUtils.degToRad( lon );
 
-    const x = 500 * Math.sin( phi ) * Math.cos( theta );
-    const y = 500 * Math.cos( phi );
-    const z = 500 * Math.sin( phi ) * Math.sin( theta );
+    // const x = 500 * Math.sin( phi ) * Math.cos( theta );
+    // const y = 500 * Math.cos( phi );
+    // const z = 500 * Math.sin( phi ) * Math.sin( theta );
 
-    camera.lookAt( x, y, z );
+    // camera.lookAt( x, y, z );
     renderer.render( scene, camera );
     render();  
 }
