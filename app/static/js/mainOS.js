@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
           const controls = appControls();
           const appNav = bottomNav();
           openApp(content, controls, appNav, appName);
+          if (appName === 'tv') {
+            tvHome();
+          }
+          if (appName === 'photos') {
+            photoHome();
+          }
         } else {
           console.error(
             `Function 'generateContent' not defined in ${appName}.js`
@@ -28,10 +34,59 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error(`Error loading ${appName}.js`);
       };
       document.body.appendChild(script);
+
+      function tvHome() {
+        const homeButton = document.querySelector('.tv-sidebar .selected');
+        homeButton.addEventListener('click', function() {
+            const originalContent = appContent(); 
+            const tvContent = document.querySelector(".tv-content");
+            tvContent.innerHTML = originalContent;
+            playMovie();
+        });
+      }
+
+      function photoHome() {
+        const homeButton = document.querySelector('.photo-sidebar .selected');
+        const modal = document.querySelector('.modal-content');
+        homeButton.addEventListener('click', function() {
+            const originalContentString = appContent();
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = originalContentString;
+            const originalContent = tempDiv.querySelector(".photo-content"); 
+            const photoContent = document.querySelector(".photo-content");
+            photoContent.replaceWith(originalContent); 
+            modal.style.width ="900px";
+            openPhoto();
+        });
+      }
     });
     
   });
 
+  function playMovie() {
+    const movieImages = document.querySelectorAll(".tv-content .cards .row img");
+    movieImages.forEach((img) => {
+        img.addEventListener("click", function () {
+            const videoSrc = img.getAttribute("alt"); 
+            const tvContent = document.querySelector(".tv-content");
+            tvContent.innerHTML = `<video src="${videoSrc}" controls autoplay></video>`;
+        });
+    });
+  }
+
+  function openPhoto() {
+    const movieImages = document.querySelectorAll(".photo-content .row img");
+    const modal = document.querySelector('.modal-content');
+    movieImages.forEach((img) => {
+        img.addEventListener("click", function () {
+            const imgSrc = img.getAttribute("src"); 
+            const photoContent = document.querySelector(".photo-content");
+            photoContent.setAttribute('style', 'display: flex;');
+            modal.setAttribute('style', 'width: fit-content !important;');
+            photoContent.innerHTML = `<img style="object-fit: contain;width: 100%;height: 100%;" src="${imgSrc}"/>`;
+        });
+    });
+  }
 
   function openApp(appContent, appControls, appNav, appName) {
 
@@ -63,6 +118,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    if (appName === "tv") {
+      playMovie();
+    }
+
+    if (appName === "photos") {
+      openPhoto();
+    }
+
     if (appName === "safari") {
         function openURLInSafari(url) {
             safariContent.innerHTML = `
@@ -83,9 +146,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!url.includes("http")) {
                 url = `https://www.bing.com/search?q=${encodeURIComponent(url)}`;
             }
-            openURLInSafari(url);
             }
         });
+
+        openURLInSafari('https://www.bing.com/search?q=jaykef');
     }
 
     let isDragging = false;
@@ -169,8 +233,8 @@ document.addEventListener("DOMContentLoaded", function () {
       appsVisible = false;
     }
   });
-
 });
+
 
 
 

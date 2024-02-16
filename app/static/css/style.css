@@ -433,9 +433,15 @@ body {
   height: 100%;
   object-fit: cover;
 }
+.modal .mf-content {
+  overflow-y: scroll;
+  height: 490px;
+  border-radius: 30px;
+  overflow-x: hidden;
+  background: rgb(157 156 156 / 25%);
+}
 .modal .tv-content,
-.modal .store-content,
-.modal .mf-content{
+.modal .store-content{
   overflow-y: scroll;
   height: 490px;
   border-radius: 30px;
