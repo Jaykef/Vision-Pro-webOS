@@ -230,6 +230,32 @@ body {
   color: #00000000;
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.modal .mf-content .img1 {
+  animation: rotate 5s linear infinite;  
+  transform-origin: center center;
+}
+
+.modal .mf-content .mf-button {
+  position: absolute;
+  bottom: -16px;
+  padding: 12px;
+  width: 160px;
+  border-radius: 120px;
+  border: none;
+  background-color: #9d9c9c40;
+  color: #fff;
+  font-size: 15px;
+
+}
 .modal .photo-sidebar,
 .modal .tv-sidebar,
 .modal .store-sidebar,
@@ -439,6 +465,9 @@ body {
   border-radius: 30px;
   overflow-x: hidden;
   background: rgb(157 156 156 / 25%);
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 .modal .tv-content,
 .modal .store-content{
@@ -552,12 +581,3 @@ body {
   color: #ffffff82;
 }
 
-
-@keyframes rotate {
-  from {
-    transform: translate3d(-50%, -50%, 0) rotate(0deg);
-  }
-  to {
-    transform: translate3d(-50%, -50%, 0) rotate(360deg);
-  }
-}
