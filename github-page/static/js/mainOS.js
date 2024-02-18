@@ -154,7 +154,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (appName === "mindfulness") {
       const content = document.querySelector('.modal .mf-content');
+      const modal = document.querySelector('.modal-content');
+      modal.style.width = "460px";
       const img = document.querySelector('.modal .mf-content .img1');
+      const img2 = document.querySelector('.modal .mf-content .img2');
+      const button = document.querySelector('.modal .mf-content .mf-button');
+      button.addEventListener('click', function() {
+        img.style.display = "none";
+        img2.style.display = "block";
+        content.style.backgroundColor = "transparent";
+        modal.setAttribute('style', 'width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;');
+      });
       let alpha = 0;
       let height = 100;
       
@@ -162,7 +172,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (alpha <= 78 && height <= 460) {
           alpha++;
           height+=4;
-          content.style.backgroundColor = `rgba(9, 9, 9, ${alpha / 100})`;
+          // content.style.backgroundColor = `rgba(9, 9, 9, ${alpha / 100})`;
+          // button.style.backgroundColor = `rgba(9, 9, 9, ${alpha / 100})`;
           img.style.maxHeight = `${height}px`;
         }
       }, 100);
