@@ -58,7 +58,8 @@ function createSphere() {
 
 function animate() {
     requestAnimationFrame(animate);
-  
+
+    // FOR LOOP ROTATION
     // if (controls.enabled)
 
     // if ( isUserInteracting === false ) {
