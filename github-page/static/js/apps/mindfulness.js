@@ -1,8 +1,8 @@
 function appContent() {
     return `
     <div class="mf-content">
-        <img class="img1" style="height:400px" src="./static/img/app-icon.png" />
-        <!-- <img class="img2" src="./static/img/mf-3.png" /> -->
+        <img class="img1" style="height:400px;margin-bottom: 60px;" src="./static/img/app-icon.png" />
+        <img class="img2" src="./static/img/mf-3.png" />
         <button class="mf-button">Start</button>
     </div>
     `
