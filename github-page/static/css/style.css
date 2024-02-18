@@ -239,21 +239,27 @@ body {
   }
 }
 
-.modal .mf-content .img1 {
+/* .modal .mf-content .img1 {
   animation: rotate 5s linear infinite;  
   transform-origin: center center;
+} */
+
+.modal .mf-content .img2 {
+  display: none;
 }
 
 .modal .mf-content .mf-button {
   position: absolute;
-  bottom: -16px;
+  bottom: 20px;
   padding: 12px;
   width: 160px;
   border-radius: 120px;
   border: none;
-  background-color: #9d9c9c40;
+  background-color: #adaaaad9;
   color: #fff;
-  font-size: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgb(226 226 226 / 28%), inset 2px 2px 8px rgb(222 222 222 / 4%);
 
 }
 .modal .photo-sidebar,
