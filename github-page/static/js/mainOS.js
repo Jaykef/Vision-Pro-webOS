@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const appName = app.querySelector('img').getAttribute('alt').trim().toLowerCase();
 
       const script = document.createElement("script");
-      script.src = `./github-page/static/js/apps/${appName}.js`;
+      script.src = `./static/js/apps/${appName}.js`;
       script.onload = function () {
         if (typeof appContent === "function" && typeof appControls === "function" && typeof bottomNav === "function") {
           const content = appContent();
@@ -127,29 +127,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (appName === "safari") {
-        function openURLInSafari(url) {
-            safariContent.innerHTML = `
-                <iframe src="${url}" style="width: 100%; height: 100%; border: none;" ></iframe>
-            `;
+      function openURLInSafari(url) {
+          safariContent.innerHTML = `
+              <iframe src="${url}" style="width: 100%; height: 100%; border: none;" ></iframe>
+          `;
+      }
+
+      const safariContent = document.querySelector(".modal .modal-content .safari-content");
+      const urlInput = document.getElementById("urlInput");
+      console.log(safariContent);
+      console.log(urlInput);
+      
+      document.body.insertAdjacentHTML("beforeend", safariContent);
+
+      urlInput.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+          let url = urlInput.value;
+          if (!url.includes("http")) {
+              url = `https://www.bing.com/search?q=${encodeURIComponent(url)}`;
+          }
+          }
+      });
+
+      openURLInSafari('https://www.bing.com/search?q=jaykef');
+    }
+
+    if (appName === "mindfulness") {
+      const content = document.querySelector('.modal .mf-content');
+      const img = document.querySelector('.modal .mf-content .img1');
+      let alpha = 0;
+      let height = 100;
+      
+      setInterval(() => {
+        if (alpha <= 78 && height <= 460) {
+          alpha++;
+          height+=4;
+          content.style.backgroundColor = `rgba(9, 9, 9, ${alpha / 100})`;
+          img.style.maxHeight = `${height}px`;
         }
+      }, 100);
 
-        const safariContent = document.querySelector(".modal .modal-content .safari-content");
-        const urlInput = document.getElementById("urlInput");
-        console.log(safariContent);
-        console.log(urlInput);
-        
-        document.body.insertAdjacentHTML("beforeend", safariContent);
-
-        urlInput.addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-            let url = urlInput.value;
-            if (!url.includes("http")) {
-                url = `https://www.bing.com/search?q=${encodeURIComponent(url)}`;
-            }
-            }
-        });
-
-        openURLInSafari('https://www.bing.com/search?q=jaykef');
     }
 
     let isDragging = false;
@@ -161,7 +178,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     modal.addEventListener("mousedown", function (event) {
       if (event.detail === 2) {
-        // Check for double-click
         isDragging = true;
         startX = event.clientX - modal.offsetLeft;
         startY = event.clientY - modal.offsetTop;
@@ -234,7 +250,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-
-
-
