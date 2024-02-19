@@ -22,6 +22,7 @@ https://github.com/Jaykef/Vision-Pro-webOS/assets/11355002/3728f35c-22fa-4366-8b
 3. Run app
    
    ``` node server.js ```
+
    Try app at http://localhost:3000/
    
 
