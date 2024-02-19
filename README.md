@@ -7,10 +7,23 @@ https://github.com/Jaykef/Vision-Pro-webOS/assets/11355002/3728f35c-22fa-4366-8b
 
 ## Features
 <ul>
-  <li>Spatial effects (Object Positioning and animations with Threejs)</li>
+  <li>Spatial effects (3D Space Object Positioning and animations with Threejs)</li>
   <li>Panoramic controls (Threejs OrbitalControls)</li>
   <li>Apps - so far have implemented 5 apps (Photos, Tv, Mindfulness, Safari, App Store)</li>
 </ul>
+
+## Usage
+1. Clone repo
+   
+   ``` git clone https://github.com/Jaykef/Vision-Pro-webOS.git``` 
+2. Install node modules in root directory
+   
+    ```npm install```
+3. Run app
+   
+   ``` node server.js ```
+   Try app at http://localhost:3000/
+   
 
 ## Todos
 <ul>
