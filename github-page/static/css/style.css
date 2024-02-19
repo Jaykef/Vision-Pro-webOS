@@ -239,10 +239,10 @@ body {
   }
 }
 
-/* .modal .mf-content .img1 {
-  animation: rotate 5s linear infinite;  
+.modal .mf-content .img1 {
+  animation: rotate 5s linear;  
   transform-origin: center center;
-} */
+}
 
 .modal .mf-content .img2 {
   display: none;
