@@ -127,29 +127,70 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (appName === "safari") {
-        function openURLInSafari(url) {
-            safariContent.innerHTML = `
-                <iframe src="${url}" style="width: 100%; height: 100%; border: none;" ></iframe>
-            `;
+      function openURLInSafari(url) {
+          safariContent.innerHTML = `
+              <iframe src="${url}" style="width: 100%; height: 100%; border: none;" ></iframe>
+          `;
+      }
+
+      const safariContent = document.querySelector(".modal .modal-content .safari-content");
+      const urlInput = document.getElementById("urlInput");
+      console.log(safariContent);
+      console.log(urlInput);
+      
+      document.body.insertAdjacentHTML("beforeend", safariContent);
+
+      urlInput.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+          let url = urlInput.value;
+          if (!url.includes("http")) {
+              url = `https://www.bing.com/search?q=${encodeURIComponent(url)}`;
+          }
+          }
+      });
+
+      openURLInSafari('https://www.bing.com/search?q=jaykef');
+    }
+
+    if (appName === "mindfulness") {
+      const content = document.querySelector('.modal .mf-content');
+      const modal = document.querySelector('.modal-content');
+      modal.style.width = "460px";
+      const img = document.querySelector('.modal .mf-content .img1');
+      const img2 = document.querySelector('.modal .mf-content .img2');
+      const button = document.querySelector('.modal .mf-content .mf-button');
+
+      button.addEventListener('click', function() {
+        if (button.innerHTML === "Start") {
+          button.innerHTML = "End";
+          img.style.display = "none";
+          img2.style.display = "block";
+          content.style.backgroundColor = "transparent";
+          modal.setAttribute('style', 'width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; border-radius: 0;');
+          content.style.height = "100%";
+
+          let alpha = 0;
+          let height = 100;
+          
+          setInterval(() => {
+            if (alpha <= 78 && height <= 1560) {
+              alpha++;
+              height += 8;
+              modal.style.backgroundColor = `rgba(9, 9, 9, ${alpha / 100})`;
+              button.style.backgroundColor = `rgba(9, 9, 9, ${alpha / 100})`;
+              img2.style.maxHeight = `${height}px`;
+            }
+          }, 100);
+          
+        } else if (button.innerHTML === "End") {
+          button.innerHTML = "Start";
+          img.style.display = "flex";
+          img2.style.display = "none";
+          modal.removeAttribute('style'); 
+          modal.setAttribute('style', 'width: fit-content; height: fit-content');
+
         }
-
-        const safariContent = document.querySelector(".modal .modal-content .safari-content");
-        const urlInput = document.getElementById("urlInput");
-        console.log(safariContent);
-        console.log(urlInput);
-        
-        document.body.insertAdjacentHTML("beforeend", safariContent);
-
-        urlInput.addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-            let url = urlInput.value;
-            if (!url.includes("http")) {
-                url = `https://www.bing.com/search?q=${encodeURIComponent(url)}`;
-            }
-            }
-        });
-
-        openURLInSafari('https://www.bing.com/search?q=jaykef');
+      });
     }
 
     let isDragging = false;
@@ -161,7 +202,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     modal.addEventListener("mousedown", function (event) {
       if (event.detail === 2) {
-        // Check for double-click
         isDragging = true;
         startX = event.clientX - modal.offsetLeft;
         startY = event.clientY - modal.offsetTop;
@@ -234,7 +274,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-
-
-
