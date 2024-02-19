@@ -240,20 +240,26 @@ body {
 }
 
 .modal .mf-content .img1 {
-  animation: rotate 5s linear infinite;  
+  animation: rotate 5s linear;  
   transform-origin: center center;
+}
+
+.modal .mf-content .img2 {
+  display: none;
 }
 
 .modal .mf-content .mf-button {
   position: absolute;
-  bottom: -16px;
+  bottom: 20px;
   padding: 12px;
   width: 160px;
   border-radius: 120px;
   border: none;
-  background-color: #9d9c9c40;
+  background-color: #adaaaad9;
   color: #fff;
-  font-size: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgb(226 226 226 / 28%), inset 2px 2px 8px rgb(222 222 222 / 4%);
 
 }
 .modal .photo-sidebar,
@@ -459,7 +465,14 @@ body {
   height: 100%;
   object-fit: cover;
 }
-.modal .mf-content {
+.modal .mf-content,
+.modal .mail-content,
+.modal .music-content,
+.modal .freeform-content,
+.modal .notes-content,
+.modal .settings-content,
+.modal .messages-content,
+.modal .keynotes-content {
   overflow-y: scroll;
   height: 490px;
   border-radius: 30px;
@@ -470,7 +483,7 @@ body {
   display: flex;
 }
 .modal .tv-content,
-.modal .store-content{
+.modal .store-content {
   overflow-y: scroll;
   height: 490px;
   border-radius: 30px;
@@ -580,4 +593,3 @@ body {
   cursor: pointer;
   color: #ffffff82;
 }
-
