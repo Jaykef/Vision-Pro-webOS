@@ -465,7 +465,14 @@ body {
   height: 100%;
   object-fit: cover;
 }
-.modal .mf-content {
+.modal .mf-content,
+.modal .mail-content,
+.modal .music-content,
+.modal .freeform-content,
+.modal .notes-content,
+.modal .settings-content,
+.modal .messages-content,
+.modal .keynotes-content {
   overflow-y: scroll;
   height: 490px;
   border-radius: 30px;
@@ -476,7 +483,7 @@ body {
   display: flex;
 }
 .modal .tv-content,
-.modal .store-content{
+.modal .store-content {
   overflow-y: scroll;
   height: 490px;
   border-radius: 30px;
