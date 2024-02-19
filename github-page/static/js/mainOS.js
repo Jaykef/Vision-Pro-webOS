@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const appName = app.querySelector('img').getAttribute('alt').trim().toLowerCase();
 
       const script = document.createElement("script");
-      script.src = `./static/js/apps/${appName}.js`;
+      script.src = `./github-page/static/js/apps/${appName}.js`;
       script.onload = function () {
         if (typeof appContent === "function" && typeof appControls === "function" && typeof bottomNav === "function") {
           const content = appContent();
