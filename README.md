@@ -15,13 +15,19 @@ https://github.com/Jaykef/Vision-Pro-webOS/assets/11355002/3728f35c-22fa-4366-8b
 ## Usage
 1. Clone repo
    
-   ``` git clone https://github.com/Jaykef/Vision-Pro-webOS.git``` 
-2. Install node modules in root directory
+   ```
+   git clone https://github.com/Jaykef/Vision-Pro-webOS.git
+   ``` 
+3. Install node modules in root directory
    
-    ```npm install```
-3. Run app
+    ```
+   npm install
+    ```
+5. Run app
    
-   ``` node server.js ```
+   ```
+   node server.js
+   ```
 
    Try app at http://localhost:3000/
    
