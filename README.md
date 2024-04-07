@@ -20,9 +20,9 @@ Clone repo
    ``` 
 Install node modules in root directory
    
-    ```
-    npm install
-    ```
+  ```
+  npm install
+  ```
 Run app
    
    ```
